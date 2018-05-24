@@ -5,8 +5,15 @@ module.exports = function (app) {
 
     // express().use("/style", express.static("assets"));
 
+    app.use(express.static(path.join(__dirname, "../public/assets")));
+
+
     app.get("/survey", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+
+    app.get("/assets/style.css", function(req, res) {
+        res.sendFile(__dirname, "assets/style.css");
     });
 
     // whenever we get this url from the user...
