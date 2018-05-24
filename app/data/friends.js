@@ -6,4 +6,5 @@ var friendArray = [
     },
 ];
 
+// We can now use this array in any other file we want.
 module.exports(friendArray);
