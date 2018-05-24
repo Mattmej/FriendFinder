@@ -18,6 +18,8 @@ app.use(bodyParser.json());
 //     res.end(JSON.stringify(req.body, null, 2))
 // })
 
+require("./app/routing/apiRoutes.js")(app);
+
 
 // Includes html route files in our server.
 // The app we are passing in is express.
