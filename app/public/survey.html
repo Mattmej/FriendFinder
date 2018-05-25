@@ -303,7 +303,7 @@
 
         <div class = "row">
             <div class = "col-12">
-                <input type="submit" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
+                <input type="submit" onclick = "getUserInfo()" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
             </div>
         </div>
 
@@ -325,36 +325,43 @@
 
 <script type = "text/javascript">
 
-    function displayFriendData() {
-        var currentURL = window.location.origin;
+    // function displayFriendData() {
+    //     var currentURL = window.location.origin;
 
-        $.ajax({url: currentURL + "/api/friends", method: "GET"})
-        .then(function(response) {
-            // var results = response.data;
-            // console.log(results);
+    //     $.ajax({url: currentURL + "/api/friends", method: "GET"})
+    //     .then(function(response) {
+    //         // var results = response.data;
+    //         // console.log(results);
 
-            console.log(response);
-        })
-    }
+    //         console.log(response);
+    //     })
+    // }
 
-    displayFriendData();
+    // displayFriendData();
 
     var questionArray = [];
+    var userArray = [];
 
     function getUserInfo() {
 
         for (i = 1; i < 11; i++) {
-            var question = "question" + i + "Answer";
+            var question = "#question" + i + "Answer";
             // var question
             questionArray.push(question);
-
-
+            userArray.push($(questionArray[i-1]).val());
         }
+        console.log(questionArray);
+        console.log(userArray);
+
     }
 
-    console.log(questionArray);
+    // console.log(questionArray);
 
-    getUserInfo();
+    // getUserInfo();
+
+    // $(".submit").on("click", getUserInfo());
+
+
 
 
 
