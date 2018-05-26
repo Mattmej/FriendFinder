@@ -1,3 +1,4 @@
+// Link to friends.js
 var friends = require("../data/friends.js");
 
 

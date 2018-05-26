@@ -30,6 +30,14 @@
 
         <div class = "row space"></div>
 
+        <div class = "row entry-holder">
+            <!-- <div class = "col-12 entry-holder"> -->
+
+
+
+            <!-- </div> -->
+        </div>
+
     </div>
 
 
@@ -61,6 +69,17 @@
                 console.log(response[i].name);
                 console.log(response[i].photo);
                 console.log(response[i].totalScore);
+
+                var newEntry = $("<div class = 'col-12'></div>");
+                $(newEntry).append(`<p>${response[i].name}</p>`);
+                $(newEntry).append(`<p>${response[i].photo}</p>`);
+                $(newEntry).append(response[i].totalScore);
+                $(newEntry).append(`<hr>`);
+
+                $(".entry-holder").append(newEntry);
+
+
+                // // $()
             }
 
 
