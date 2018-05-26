@@ -16,6 +16,11 @@ module.exports = function (app) {
         res.sendFile(__dirname, "assets/style.css");
     });
 
+    // REMOVE THIS LATER
+    app.get("/friendList", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/friendList.html"));
+    });
+
     // whenever we get this url from the user...
     app.use( function(req, res) {
 

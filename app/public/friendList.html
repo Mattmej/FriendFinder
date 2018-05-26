@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel = "stylesheet" type = "text/css" href = "/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class = "container">
+
+        <div class = "row space"></div>
+
+        <header class = "row">
+            <div class = "col-12">
+                <h2>Friends</h2>
+
+
+            </div>
+        </header>
+        <hr>
+
+        <div class = "row space"></div>
+
+    </div>
+
+
+    <!-- Link to jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Link to friends.js -->
+    <script type = "text/javascript" src = "../data/friends.js"></script>
+
+    
+</body>
+
+<script type = "text/javascript">
+
+    // DELETE THIS FUNCTION LATER
+    function displayFriendData() {
+        var currentURL = window.location.origin;
+        console.log(currentURL);
+
+        $.ajax({
+            url: currentURL + "/api/friends",
+            method: "GET"
+        })
+        .then (function(response) {
+            // console.log(response);
+
+            for (i = 0; i < response.length; i++) {
+                console.log("-------------------------------");
+                console.log(response[i].name);
+                console.log(response[i].photo);
+                console.log(response[i].totalScore);
+            }
+
+
+        })
+    }
+    displayFriendData();
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</html>
