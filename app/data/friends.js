@@ -73,6 +73,6 @@ var Stephen = new Friend("Stephen McStephenson", "http://r.ddmcdn.com/s_f/o_1/AP
 friendArray.push(John);
 friendArray.push(Stephen);
 
-console.log(friendArray);
+// console.log(friendArray);
 
 module.exports = friendArray, Friend;
