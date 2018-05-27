@@ -382,28 +382,6 @@
             username = $("#username").val();
             photoURL = $("#photoLink").val();
 
-            // var newUser = {
-            //     name: username,
-            //     photo: photoURL,
-            //     scores: userArray,
-            //     // getTotal: function(total, num) {
-            //     //     return total + num;
-            //     // },
-            //     // totalScore: this.scores.reduce(this.getTotal)
-
-            //     getTotal: function(scores) {
-
-            //         var total = 0;
-            //         for (i = 0; i < scores.length; i++) {
-            //             total += scores[i];
-            //         }
-            //         return total;
-            //     },
-
-            //     totalScore: getTotal(this.scores)
-
-            // }
-
             function Friend (name, photo, scores) {
                 this.name = name;
                 this.photo = photo;
@@ -419,20 +397,6 @@
             var newUser = new Friend(username, photoURL, userArray);
             console.log(newUser);
 
-
-            // $.post(currentURL + "api/friends", $("#username").val(), $("#photoLink").val(), userArray, function(data) {
-            //     console.log(data);
-            // })
-
-            // $.post(currentURL + "/api/friends", username, function(data) {
-            //     // console.log(data + " sent!");
-            //     window.alert(data + " sent!");
-            // })
-
-            // $.post(currentURL + "/api/friends", photoURL, function(data) {
-            //     // console.log(data + "sent!");
-            //     window.alert(data + " sent!");
-            // })
 
             $.post(currentURL + "/api/friends", newUser);
 
