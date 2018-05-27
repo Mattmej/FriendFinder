@@ -53,10 +53,10 @@ function Friend (name, photo, scores) {
     this['scores[]'] = scores;
     // this.getTotal = this.scores.reduce(total + num);
     // this.totalScore = totalScore;
-    this.getTotal = function(total, num) {
-        return total + num;
-    }
-    this.totalScore = this['scores[]'].reduce(this.getTotal);
+    // this.getTotal = function(total, num) {
+    //     return total + num;
+    // }
+    // this.totalScore = this['scores[]'].reduce(this.getTotal);
 }
 
 var John = new Friend("John", "http://johnsite.john/john.jpg", [3, 2, 5, 3, 2, 1, 4, 3, 5, 2]);

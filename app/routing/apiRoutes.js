@@ -20,7 +20,7 @@ module.exports = function(app) {
             req.body['scores[]'][i] = parseInt(req.body['scores[]'][i]);
         }
 
-        req.body.totalScore = parseInt(req.body.totalScore);
+        // req.body.totalScore = parseInt(req.body.totalScore);
         friends.push(req.body);
 
         // var tempObject = req.body;
