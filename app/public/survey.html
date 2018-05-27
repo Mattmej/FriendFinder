@@ -354,14 +354,19 @@
     // var Friend = friendFile.Friend;
     // var friendArray = friendFile.friendArray;
 
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
         var questionArray = [];
         var userArray = [];
 
+        var currentURL = window.location.origin;
+        var username;
+        var photoURL;
+
 
         // This function will grab the user's form data and put the data into "userArray"
         function getUserInfo() {
+
 
             for (i = 1; i < 11; i++) {
                 var question = "#question" + i + "Answer";
@@ -374,6 +379,25 @@
 
             // var newFriend = new Friend($("#username").val(), $("#photoLink").val(), userArray);
             // console.log(newFriend);
+            username = $("#username").val();
+            photoURL = $("#photoLink").val();
+
+            // $.post(currentURL + "api/friends", $("#username").val(), $("#photoLink").val(), userArray, function(data) {
+            //     console.log(data);
+            // })
+
+            $.post(currentURL + "/api/friends", username, function(data) {
+                // console.log(data + " sent!");
+                window.alert(data + " sent!");
+            })
+
+            $.post(currentURL + "/api/friends", photoURL, function(data) {
+                // console.log(data + "sent!");
+                window.alert(data + " sent!");
+            })
+
+            
+
 
 
 
@@ -388,9 +412,11 @@
         // var newUser = new Friend()
 
 
+        
 
 
-    })
+
+    // })
 
     
 
