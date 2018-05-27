@@ -42,6 +42,7 @@ I have now realized that I may need a constructor function to create new instanc
 
 */
 
+
 var friendArray = [];
 
 

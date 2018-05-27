@@ -349,29 +349,50 @@
 
     // displayFriendData();
 
-    var questionArray = [];
-    var userArray = [];
+    // var friendFile = require("./data/friends.js");
+    // console.log(typeof friendFile.Friend);
+    // var Friend = friendFile.Friend;
+    // var friendArray = friendFile.friendArray;
 
-    function getUserInfo() {
+    $(document).ready(function() {
 
-        for (i = 1; i < 11; i++) {
-            var question = "#question" + i + "Answer";
-            // var question
-            questionArray.push(question);
-            userArray.push(parseInt($(questionArray[i-1]).val()));
+        var questionArray = [];
+        var userArray = [];
+
+
+        // This function will grab the user's form data and put the data into "userArray"
+        function getUserInfo() {
+
+            for (i = 1; i < 11; i++) {
+                var question = "#question" + i + "Answer";
+                // var question
+                questionArray.push(question);
+                userArray.push(parseInt($(questionArray[i-1]).val()));
+            }
+            // console.log(questionArray);
+            console.log(userArray);
+
+            // var newFriend = new Friend($("#username").val(), $("#photoLink").val(), userArray);
+            // console.log(newFriend);
+
+
+
         }
-        console.log(questionArray);
-        console.log(userArray);
 
-    }
+        // console.log(questionArray);
 
-    // console.log(questionArray);
+        // getUserInfo();
 
-    // getUserInfo();
+        // $(".submit").on("click", getUserInfo());
 
-    // $(".submit").on("click", getUserInfo());
+        // var newUser = new Friend()
 
-    // var newUser = new Friend()
+
+
+
+    })
+
+    
 
 
 
