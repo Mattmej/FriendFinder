@@ -13,7 +13,27 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-        friends.push(req.body);
+        // req.body.scores
+
+        // for (i = 0; i < req.body.scores.length; i++) {
+        //     req.body.scores[i] = parseInt(req.body.scores[i]);
+        // }
+
+        // req.body.totalScore = parseInt(req.body.totalScore);
+        // friends.push(req.body);
+
+        // var tempObject = req.body;
+
+        // for (i = 0; i < req.body.scores.length; i++) {
+        //     tempObject.scores[i] = parseInt(tempObject.scores[i]);
+        // }
+
+        // tempObject.totalScore = parseInt(tempObject.totalScore);
+
+        // friends.push(tempObject);
+        // console.log(req.body.\'scores[]\');
+        // console.log(res);
+        console.log(typeof req.body);
     })
 
 }
