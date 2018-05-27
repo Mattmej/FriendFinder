@@ -418,6 +418,8 @@
 
             var newUser = new Friend(username, photoURL, userArray);
             console.log(newUser);
+
+
             // $.post(currentURL + "api/friends", $("#username").val(), $("#photoLink").val(), userArray, function(data) {
             //     console.log(data);
             // })
@@ -431,6 +433,8 @@
             //     // console.log(data + "sent!");
             //     window.alert(data + " sent!");
             // })
+
+            $.post(currentURL + "/api/friends", newUser);
 
             
 
