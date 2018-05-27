@@ -404,7 +404,9 @@
 
 
 
-        $.post(currentURL + "/api/friends", newUser);
+        $.post(currentURL + "/api/friends", newUser, function(data) {
+            console.log(data);
+        });
 
 
 
@@ -438,7 +440,7 @@
 
 
         $.get(currentURL + "/api/friends", function(data, status) {
-            console.log(data);
+            // console.log(data);
 
             // for (i = 0; i < data.length; i++) {
             //     diffArray[i] = Math.abs(newUser.scores[i] - data.)
@@ -446,26 +448,30 @@
 
             // loop through data users
             // console.log(data);
-            for (i = 0; i < data.length; i++) {
+            // for (i = 0; i < data.length; i++) {
 
-                // loop through array items
-                // for (j = 0; j < newUser.scores.length; j++) {
-                    // diffArray[j] = Math.abs(newUser.scores[j] - data[i]['scores[]'][j]);
-                    // console.log(data[i]['scores[]'][j]);
-                    // console.log(data[i].scores)
-                // }
-                // console.log(data[i].scores);
-                // console.log(data[i]);
-                // console.log(data[i]['scores[]'][1]);
+            //     // loop through array items
+            //     // for (j = 0; j < newUser.scores.length; j++) {
+            //         // diffArray[j] = Math.abs(newUser.scores[j] - data[i]['scores[]'][j]);
+            //         // console.log(data[i]['scores[]'][j]);
+            //         // console.log(data[i].scores)
+            //     // }
+            //     // console.log(data[i].scores);
+            //     // console.log(data[i]);
+            //     // console.log(data[i]['scores[]'][1]);
 
-                for (j = 0; j < data[i]['scores[]'].length; j++) {
-                    // console.log()
-                    diffArray[j] = newUser.scores[j] - data[i]['scores[]'][j]
-                }
+            //     for (j = 0; j < data[i]['scores[]'].length; j++) {
+            //         // console.log()
+            //         diffArray[j] = newUser.scores[j] - data[i]['scores[]'][j]
+            //     }
 
-                console.log("diffArray" + i + " = " + diffArray);
+            //     console.log("diffArray" + i + " = " + diffArray);
 
-                // newUser[`totalDiff${i}`] = getSum(diffArray);
+            //     newUser[`totalDiff${i}`] = getSum(diffArray);
+            // }
+
+            for (i = 0; i < 5; i++) {
+                newUser[`totalDiff${i}`] = i;
             }
         })
     }

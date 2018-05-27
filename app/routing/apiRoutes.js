@@ -34,8 +34,8 @@ module.exports = function(app) {
         // friends.push(tempObject);
         // console.log(req.body.\'scores[]\');
         console.log(req.body);
-        console.log(req.body.name);
-        console.log(req.body['scores[]']);
+        // console.log(req.body.name);
+        // console.log(req.body['scores[]']);
         // console.log(req.body['scoreArray[]']);
         // console.log(typeof req.body);
     })
