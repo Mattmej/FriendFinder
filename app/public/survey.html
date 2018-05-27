@@ -404,9 +404,9 @@
 
 
 
-        $.post(currentURL + "/api/friends", newUser, function(data) {
-            console.log(data);
-        });
+        // $.post(currentURL + "/api/friends", newUser, function(data) {
+        //     console.log(data);
+        // });
 
 
 
@@ -474,6 +474,14 @@
                 newUser[`totalDiff${i}`] = i;
             }
         })
+        .then(function() {
+            $.post(currentURL + "/api/friends", newUser, function(data) {
+                console.log(data);
+            });
+        })
+
+        
+       
     }
 
     function getSum(array) {
