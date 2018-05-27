@@ -354,77 +354,70 @@
     // var Friend = friendFile.Friend;
     // var friendArray = friendFile.friendArray;
 
-    // $(document).ready(function() {
 
-        var questionArray = [];
-        var userArray = [];
+    var questionArray = [];
+    var userArray = [];
 
-        var currentURL = window.location.origin;
-        var username;
-        var photoURL;
-
-
-        // This function will grab the user's form data and put the data into "userArray"
-        function getUserInfo() {
+    var currentURL = window.location.origin;
+    var username;
+    var photoURL;
 
 
-            for (i = 1; i < 11; i++) {
-                var question = "#question" + i + "Answer";
-                // var question
-                questionArray.push(question);
-                userArray.push(parseInt($(questionArray[i-1]).val()));
-            }
-            // console.log(questionArray);
-            console.log(userArray);
-
-            // var newFriend = new Friend($("#username").val(), $("#photoLink").val(), userArray);
-            // console.log(newFriend);
-            username = $("#username").val();
-            photoURL = $("#photoLink").val();
-
-            function Friend (name, photo, scores) {
-                this.name = name;
-                this.photo = photo;
-                this.scores = scores;
-                // this.getTotal = this.scores.reduce(total + num);
-                // this.totalScore = totalScore;
-                // this.getTotal = function(total, num) {
-                //     return total + num;
-                // }
-                // this.totalScore = this.scores.reduce(this.getTotal);
-            }
-
-            var newUser = new Friend(username, photoURL, userArray);
-            console.log(newUser);
+    // This function will grab the user's form data and put the data into "userArray"
+    function getUserInfo() {
 
 
-            $.post(currentURL + "/api/friends", newUser);
+        for (i = 1; i < 11; i++) {
+            var question = "#question" + i + "Answer";
+            // var question
+            questionArray.push(question);
+            userArray.push(parseInt($(questionArray[i-1]).val()));
+        }
+        // console.log(questionArray);
+        console.log(userArray);
 
-            
+        // var newFriend = new Friend($("#username").val(), $("#photoLink").val(), userArray);
+        // console.log(newFriend);
+        username = $("#username").val();
+        photoURL = $("#photoLink").val();
 
-
-
-
+        function Friend (name, photo, scores) {
+            this.name = name;
+            this.photo = photo;
+            this.scores = scores;
+            // this.getTotal = this.scores.reduce(total + num);
+            // this.totalScore = totalScore;
+            // this.getTotal = function(total, num) {
+            //     return total + num;
+            // }
+            // this.totalScore = this.scores.reduce(this.getTotal);
         }
 
-        // console.log(questionArray);
-
-        // getUserInfo();
-
-        // $(".submit").on("click", getUserInfo());
-
-        // var newUser = new Friend()
+        var newUser = new Friend(username, photoURL, userArray);
+        console.log(newUser);
 
 
-        
+        $.post(currentURL + "/api/friends", newUser);
+
+        findMatch(newUser);
 
 
+    }
 
-    // })
+    // console.log(questionArray);
 
-    
+    // getUserInfo();
+
+    // $(".submit").on("click", getUserInfo());
+
+    // var newUser = new Friend()
 
 
+    function findMatch(newUser) {
+        $.get(currentURL + "/api/friends", function(data, status) {
+            console.log(data);
+        })
+    }
 
 
 
