@@ -20,7 +20,7 @@ module.exports = function(app) {
         // }
 
         // req.body.totalScore = parseInt(req.body.totalScore);
-        // friends.push(req.body);
+        friends.push(req.body);
 
         // var tempObject = req.body;
 
@@ -32,8 +32,11 @@ module.exports = function(app) {
 
         // friends.push(tempObject);
         // console.log(req.body.\'scores[]\');
-        // console.log(res);
-        console.log(typeof req.body);
+        console.log(req.body);
+        console.log(req.body.name);
+        // console.log(req.body.scoreArray);
+        console.log(req.body['scoreArray[]']);
+        // console.log(typeof req.body);
     })
 
 }

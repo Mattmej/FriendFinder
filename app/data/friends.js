@@ -76,4 +76,4 @@ friendArray.push(Stephen);
 
 // console.log(friendArray);
 
-module.exports = friendArray, Friend;
+module.exports = friendArray;
