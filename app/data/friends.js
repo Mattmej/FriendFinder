@@ -59,12 +59,14 @@ function Friend (name, photo, scores) {
     // this.totalScore = this['scores[]'].reduce(this.getTotal);
 }
 
-var John = new Friend("John", "http://johnsite.john/john.jpg", [3, 2, 5, 3, 2, 1, 4, 3, 5, 2]);
+var John = new Friend("John", "https://images.pexels.com/photos/683381/pexels-photo-683381.jpeg?auto=compress&cs=tinysrgb&h=350", [3, 2, 5, 3, 2, 1, 4, 3, 5, 2]);
+friendArray.push(John);
 
 // console.log(John.getTotal);
 // console.log(John.totalScore);
 
 var Stephen = new Friend("Stephen McStephenson", "http://r.ddmcdn.com/s_f/o_1/APL/uploads/2014/10/small-pets5.jpg", [5, 3, 2, 4, 3, 1, 5, 2, 4, 2]);
+friendArray.push(Stephen);
 
 // console.log(Stephen);
 // $(friendArray).push(John);
@@ -72,9 +74,15 @@ var Stephen = new Friend("Stephen McStephenson", "http://r.ddmcdn.com/s_f/o_1/AP
 
 // console.log(friendArray);
 
-friendArray.push(John);
-friendArray.push(Stephen);
 
 // console.log(friendArray);
 
+var Bradley = new Friend("Bradley the Bro", "http://quimbys.com/blog/wp-content/uploads/2008/01/frat_boy.jpg", [1, 1, 5, 4, 5, 5, 1, 5, 2, 1]);
+friendArray.push(Bradley);
+
+var Greg = new Friend("Good Guy Greg", "http://i0.kym-cdn.com/entries/icons/mobile/000/005/681/GoodGuyGreg.jpg", [5, 5, 3, 5, 2, 5, 3, 3, 4, 3]);
+friendArray.push(Greg);
+
+var Allison = new Friend("Allison", "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=350", [3, 5, 1, 2, 4, 1, 4, 2, 2, 5]);
+friendArray.push(Allison);
 module.exports = friendArray;
