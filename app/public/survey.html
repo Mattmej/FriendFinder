@@ -75,7 +75,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question1Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -100,7 +100,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question2Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -125,7 +125,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question3Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -150,7 +150,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question4Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -175,7 +175,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question5Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -200,7 +200,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question6Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -225,7 +225,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question7Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -250,7 +250,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question8Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -275,7 +275,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question9Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -300,7 +300,7 @@
                     <div class = "row">
                         <div class = "col-2">
                             <select class = "form-control" id = "question10Answer">
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value>Choose...</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -389,8 +389,8 @@
 
 <script type = "text/javascript">
 
-    //     var x = document.forms;
-    // console.log(x);
+        var x = document.forms;
+    console.log(x);
 
     // function displayFriendData() {
     //     var currentURL = window.location.origin;
@@ -424,9 +424,9 @@
     // var highestScore;
     var lowestScore = 100;
 
-    $("#submit-btn").on("click", function() {
-        getUserInfo();
-    })
+    // $("#submit-btn").on("click", function() {
+    //     getUserInfo();
+    // })
 
 
     // This function will grab the user's form data and put the data into "userArray"
@@ -574,9 +574,9 @@
         $("#match-photo").append(`<img src = ${matchImage} alt = 'Friend Pic'>`)
 
         // $("#best-match-modal").modal('show');
-        $("#submit-btn").click(function() {
+        // $("#submit-btn").click(function() {
             $("#best-match-modal").modal();
-        })
+        // })
 
     }
 
@@ -587,12 +587,20 @@
         //     alert("Name must be filled out");
         //     return false;
         // }
+
+
+        
         $.each(x, function(i, field) {
             if (!field.value){
-                alert(field.name + ' is required');
+                alert("All fields are required.");
                 return false;
                 // break;
             }
+
+            // else {
+            //     getUserInfo();
+            // }
+            getUserInfo();
             
         })
         console.log(fields);
