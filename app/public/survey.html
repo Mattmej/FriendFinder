@@ -443,15 +443,20 @@
 
                 console.log("Loop " + i);
 
+                console.log(diffArray);
+
 
                 for (j = 0; j < diffArray.length; j++) {
                     sum += diffArray[j];
                 }
 
+                newUser[`totalDiff${i}`] = sum;
+
                 console.log(sum);
                 sum = 0;
 
             }
+            
 
             // for (i = 0; i < 5; i++) {
             //     newUser[`totalDiff${i}`] = i;
