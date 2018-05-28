@@ -363,6 +363,7 @@
     var photoURL;
 
     var diffArray = [];
+    var sum = 0;
 
 
     // This function will grab the user's form data and put the data into "userArray"
@@ -401,6 +402,8 @@
         findMatch(newUser);
 
         // console.log(newUser);
+
+        
 
 
 
@@ -442,37 +445,55 @@
         $.get(currentURL + "/api/friends", function(data, status) {
             // console.log(data);
 
+
+
             // for (i = 0; i < data.length; i++) {
             //     diffArray[i] = Math.abs(newUser.scores[i] - data.)
             // }
 
             // loop through data users
             // console.log(data);
-            // for (i = 0; i < data.length; i++) {
+            for (i = 0; i < data.length; i++) {
+                console.log(data);
 
-            //     // loop through array items
-            //     // for (j = 0; j < newUser.scores.length; j++) {
-            //         // diffArray[j] = Math.abs(newUser.scores[j] - data[i]['scores[]'][j]);
-            //         // console.log(data[i]['scores[]'][j]);
-            //         // console.log(data[i].scores)
-            //     // }
-            //     // console.log(data[i].scores);
-            //     // console.log(data[i]);
-            //     // console.log(data[i]['scores[]'][1]);
+                console.log("=========================");
 
-            //     for (j = 0; j < data[i]['scores[]'].length; j++) {
-            //         // console.log()
-            //         diffArray[j] = newUser.scores[j] - data[i]['scores[]'][j]
-            //     }
+                // loop through array items
+                for (j = 0; j < newUser.scores.length; j++) {
+                    diffArray[j] = Math.abs(newUser.scores[j] - data[i]['scores[]'][j]);
+                    // console.log(data[i]['scores[]'][j]);
+                    // console.log(data[i].scores)
+                }
+                // console.log(data[i].scores);
+                // console.log(data[i]);
+                // console.log(data[i]['scores[]'][1]);
 
-            //     console.log("diffArray" + i + " = " + diffArray);
+                // for (j = 0; j < data[i]['scores[]'].length; j++) {
+                //     // console.log()
+                //     diffArray[j] = newUser.scores[j] - data[i]['scores[]'][j]
+                // }
 
-            //     newUser[`totalDiff${i}`] = getSum(diffArray);
-            // }
+                // console.log("diffArray" + i + " = " + diffArray);
+                // console.log(`diffArray${i} = ${diffArray}`);
 
-            for (i = 0; i < 5; i++) {
-                newUser[`totalDiff${i}`] = i;
+                console.log("Loop " + i);
+                // newUser[`totalDiff${i}`] = getSum(diffArray);
+                // getSum(diffArray);
+                // console.log(sum);
+                // newUser[`totalDiff${i}`] = sum;
+
+                for (j = 0; j < diffArray.length; j++) {
+                    sum += diffArray[j];
+                }
+
+                console.log(sum);
+                sum = 0;
+
             }
+
+            // for (i = 0; i < 5; i++) {
+            //     newUser[`totalDiff${i}`] = i;
+            // }
         })
         .then(function() {
             $.post(currentURL + "/api/friends", newUser, function(data) {
@@ -485,12 +506,12 @@
     }
 
     function getSum(array) {
-        var sum = 0;
+        // var sum = 0;
         for (i = 0; i < array.length; i++) {
             sum += array[i];
         }
 
-        return sum;
+        // return sum;
     }
 
 
