@@ -378,24 +378,6 @@
 
 <script type = "text/javascript">
 
-    // function displayFriendData() {
-    //     var currentURL = window.location.origin;
-
-    //     $.ajax({url: currentURL + "/api/friends", method: "GET"})
-    //     .then(function(response) {
-    //         // var results = response.data;
-    //         // console.log(results);
-
-    //         console.log(response);
-    //     })
-    // }
-
-    // displayFriendData();
-
-    // var friendFile = require("./data/friends.js");
-    // console.log(typeof friendFile.Friend);
-    // var Friend = friendFile.Friend;
-    // var friendArray = friendFile.friendArray;
 
 
     var questionArray = [];
@@ -407,7 +389,6 @@
 
     var diffArray = [];
     var sum = 0;
-    // var highestScore;
     var lowestScore = 100;
 
     $("#submit-btn").on("click", function() {
@@ -449,13 +430,6 @@
 
     }
 
-    // console.log(questionArray);
-
-    // getUserInfo();
-
-    // $(".submit").on("click", getUserInfo());
-
-    // var newUser = new Friend()
 
 
     function findMatch(newUser) {

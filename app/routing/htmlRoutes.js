@@ -17,9 +17,9 @@ module.exports = function (app) {
     });
 
     // REMOVE THIS LATER
-    app.get("/friendList", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/friendList.html"));
-    });
+    // app.get("/friendList", function(req, res) {
+    //     res.sendFile(path.join(__dirname, "../public/friendList.html"));
+    // });
 
     // whenever we get this url from the user...
     app.use( function(req, res) {

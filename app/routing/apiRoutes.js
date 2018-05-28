@@ -16,28 +16,13 @@ module.exports = function(app) {
         // req.body.scores
 
         for (i = 0; i < req.body['scores[]'].length; i++) {
-            // req.body.scores[i] = parseInt(req.body.scores[i]);
             req.body['scores[]'][i] = parseInt(req.body['scores[]'][i]);
         }
 
-        // req.body.totalScore = parseInt(req.body.totalScore);
         friends.push(req.body);
 
-        // var tempObject = req.body;
-
-        // for (i = 0; i < req.body.scores.length; i++) {
-        //     tempObject.scores[i] = parseInt(tempObject.scores[i]);
-        // }
-
-        // tempObject.totalScore = parseInt(tempObject.totalScore);
-
-        // friends.push(tempObject);
-        // console.log(req.body.\'scores[]\');
         console.log(req.body);
-        // console.log(req.body.name);
-        // console.log(req.body['scores[]']);
-        // console.log(req.body['scoreArray[]']);
-        // console.log(typeof req.body);
+        
     })
 
 }
