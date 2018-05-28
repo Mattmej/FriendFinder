@@ -364,6 +364,8 @@
 
     var diffArray = [];
     var sum = 0;
+    // var highestScore;
+    var lowestScore = 100;
 
 
     // This function will grab the user's form data and put the data into "userArray"
@@ -456,6 +458,25 @@
                 sum = 0;
 
             }
+
+            var friendScores = Object.values(newUser);
+
+            console.log(friendScores);
+            for (i = 3; i < friendScores.length; i++) {
+                // var highestScore = 0;
+                
+                if (lowestScore > friendScores[i]) {
+                    lowestScore = friendScores[i];
+                }
+            }
+
+            console.log("lowest Score: " + lowestScore);
+            // console.log(friendScores.indexOf(lowestScore));
+
+            var bestMatch = data[friendScores.indexOf(lowestScore) - 3].name
+
+            console.log("Best Match: " + bestMatch);
+            
             
 
             // for (i = 0; i < 5; i++) {
