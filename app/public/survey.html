@@ -313,7 +313,7 @@
 
         <div class = "row">
             <div class = "col-12">
-                <input type="submit" onclick = "getUserInfo()" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
+                <input type="submit" id = "submit-btn" data-toggle = "modal" data-target = "#best-match-modal" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
             </div>
         </div>
 
@@ -323,6 +323,46 @@
 
 
 
+    </div>
+
+    <!-- <div id = "match-modal" class = "modal">
+        <div class = "modal-content">
+            <div class = "row">
+                <div class = "col-12">
+                    
+                </div>
+            </div> -->
+            <!-- <span class = "close">&times;</span>
+            <p></p>  -->
+        <!-- </div>
+    </div> -->
+
+    <div class = "modal fade" id = "best-match-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p id = "match-message"></p>
+                    <p id = "match-photo"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
     <!-- Link to jQuery -->
@@ -366,6 +406,10 @@
     var sum = 0;
     // var highestScore;
     var lowestScore = 100;
+
+    $("#submit-btn").on("click", function() {
+        getUserInfo();
+    })
 
 
     // This function will grab the user's form data and put the data into "userArray"
@@ -473,9 +517,11 @@
             console.log("lowest Score: " + lowestScore);
             // console.log(friendScores.indexOf(lowestScore));
 
-            var bestMatch = data[friendScores.indexOf(lowestScore) - 3].name
+            var bestMatch = data[friendScores.indexOf(lowestScore) - 3]
 
-            console.log("Best Match: " + bestMatch);
+            console.log("Best Match: " + bestMatch.name);
+
+            showBestMatch(bestMatch);
             
             
 
@@ -501,6 +547,20 @@
 
     //     // return sum;
     // }
+
+    function showBestMatch(bestMatch) {
+        // I need to use a modal for this.
+
+        $("#match-message").html(`Your best match is ${bestMatch.name}!`);
+        var matchImage = bestMatch.photo;
+        $("#match-photo").append(`<img src = ${matchImage} alt = 'Friend Pic'>`)
+
+        // $("#best-match-modal").modal('show');
+        $("#submit-btn").click(function() {
+            $("#best-match-modal").modal();
+        })
+
+    }
 
 
 
