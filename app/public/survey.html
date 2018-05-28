@@ -313,7 +313,7 @@
                     <div class = "space"></div>
                     <div class = "space"></div>
 
-                    <input type="submit" id = "submit-btn" data-toggle = "modal" data-target = "#best-match-modal" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
+                    <input type="submit" id = "submit-btn" data-toggle = "modal" onclick = "validateForm(); return false" data-target = "#best-match-modal" class = "btn btn-primary btn-block btn-lg submit" value = "Submit Form">
 
 
                 </form>
@@ -389,8 +389,8 @@
 
 <script type = "text/javascript">
 
-        var x = document.forms;
-    console.log(x);
+    //     var x = document.forms;
+    // console.log(x);
 
     // function displayFriendData() {
     //     var currentURL = window.location.origin;
@@ -549,7 +549,7 @@
         })
         .then(function() {
             $.post(currentURL + "/api/friends", newUser, function(data) {
-                console.log(data);
+                // console.log(data);
             });
         })
 
@@ -577,6 +577,25 @@
         $("#submit-btn").click(function() {
             $("#best-match-modal").modal();
         })
+
+    }
+
+    function validateForm() {
+        var x = document.forms[0]
+        // var x = document.forms["testForm"]["fname"].value;
+        // if (x == "") {
+        //     alert("Name must be filled out");
+        //     return false;
+        // }
+        $.each(x, function(i, field) {
+            if (!field.value){
+                alert(field.name + ' is required');
+                return false;
+                // break;
+            }
+            
+        })
+        console.log(fields);
 
     }
 
